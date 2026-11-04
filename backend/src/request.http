@@ -1,0 +1,67 @@
+@baseUrl = http://localhost:3001
+
+### Saúde do servidor
+GET {{baseUrl}}/health
+
+### Listar inscrições
+GET {{baseUrl}}/inscricoes
+
+### Criar inscrição completa
+POST {{baseUrl}}/inscricoes
+Content-Type: application/json
+
+{
+  "nome": "Maria Silva",
+  "email": "maria@email.com",
+  "telefone": "(11) 99999-9999",
+  "tipoIngresso": "estudante"
+}
+
+### Criar sem telefone (opcional)
+POST {{baseUrl}}/inscricoes
+Content-Type: application/json
+
+{
+  "nome": "João Souza",
+  "email": "joao@email.com",
+  "tipoIngresso": "profissional"
+}
+
+### Erro: e-mail repetido
+POST {{baseUrl}}/inscricoes
+Content-Type: application/json
+
+{
+  "nome": "Outra Maria",
+  "email": "maria@email.com",
+  "tipoIngresso": "profissional"
+}
+
+### Erro: faltando e-mail
+POST {{baseUrl}}/inscricoes
+Content-Type: application/json
+
+{
+  "nome": "Sem Email",
+  "tipoIngresso": "estudante"
+}
+
+### Erro: tipo de ingresso inválido
+POST {{baseUrl}}/inscricoes
+Content-Type: application/json
+
+{
+  "nome": "Vip",
+  "email": "vip@email.com",
+  "tipoIngresso": "vip"
+}
+
+### Erro: pedido sem corpo
+POST {{baseUrl}}/inscricoes
+Content-Type: application/json
+
+### Remover inscrição (troque o 1 por um id que exista)
+DELETE {{baseUrl}}/inscricoes/1
+
+### Erro: remover inscrição que não existe
+DELETE {{baseUrl}}/inscricoes/9999
