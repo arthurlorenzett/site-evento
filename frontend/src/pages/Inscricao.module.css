@@ -1,0 +1,147 @@
+.layout {
+  display: grid;
+  gap: 1rem 5rem;
+  align-items: start;
+}
+
+.resumo {
+  margin: 0 0 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--amarelo);
+  line-height: 1.6;
+}
+
+.formulario {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 36rem;
+}
+
+.campo {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.campo label,
+.tipos legend {
+  font-weight: 700;
+}
+
+.opcional {
+  color: var(--tinta-suave);
+  font-weight: 400;
+}
+
+.campo input {
+  min-height: 3rem;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid var(--linha);
+  border-radius: 6px;
+  background: var(--papel);
+  color: var(--tinta);
+  font: inherit;
+  font-size: 1.05rem;
+}
+
+.campo input:hover {
+  border-color: var(--tinta-suave);
+}
+
+.campo input:focus-visible {
+  border-color: var(--cobalto);
+}
+
+.tipos {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tipos legend {
+  margin-bottom: 0.4rem;
+  padding: 0;
+}
+
+.opcoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.75rem;
+}
+
+.opcao {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.1rem 0.6rem;
+  padding: 0.9rem 1rem;
+  border: 2px solid var(--linha);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.opcao:hover {
+  border-color: var(--tinta-suave);
+}
+
+.opcao:has(input:checked) {
+  border-color: var(--cobalto);
+  background: var(--nevoa);
+}
+
+.opcao:has(input:focus-visible) {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+}
+
+.opcao input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0.15rem 0 0;
+  accent-color: var(--cobalto);
+}
+
+.opcao input:focus-visible {
+  outline: none;
+}
+
+.opcaoTitulo {
+  font-weight: 700;
+}
+
+.opcaoDescricao {
+  grid-column: 2;
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+}
+
+.formulario > .botao {
+  justify-self: start;
+}
+
+.sucesso {
+  max-width: 36rem;
+  padding: 1.75rem;
+  border: 2px solid var(--sucesso);
+  border-radius: 6px;
+  background: var(--sucesso-fundo);
+}
+
+.sucesso h2 {
+  color: var(--sucesso);
+}
+
+.sucesso p {
+  margin: 1rem 0 1.5rem;
+  font-size: 1.1rem;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}

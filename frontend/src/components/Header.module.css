@@ -1,0 +1,48 @@
+.cabecalho {
+  border-bottom: 2px solid var(--linha);
+  background: var(--papel);
+}
+
+.conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0.9rem var(--margem);
+}
+
+.marca {
+  color: var(--cobalto);
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-stretch: 70%;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.link {
+  padding: 0.35rem 0;
+  border-bottom: 3px solid transparent;
+  color: var(--tinta);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom-color: var(--linha);
+}
+
+.ativo,
+.ativo:hover {
+  border-bottom-color: var(--cobalto);
+  color: var(--cobalto);
+}

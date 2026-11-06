@@ -1,23 +1,29 @@
-import { Routes, Route, Link } from "react-router";
+import { Routes, Route } from "react-router";
+import Header from "./components/Header.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import Home from "./pages/Home.jsx";
 import Inscricao from "./pages/Inscricao.jsx";
 import Inscritos from "./pages/Inscritos.jsx";
-import Home from "./pages/Home.jsx";
+import NaoEncontrada from "./pages/NaoEncontrada.jsx";
 
 function App() {
   return (
     <>
-      <nav>
-        <Link to="/">Evento</Link>
-        <Link to="/inscricao">Inscrição</Link>
-        <Link to="/inscritos">Inscritos</Link>
-      </nav>
+      <ScrollToTop />
+      <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/inscricao" element={<Inscricao />} />
-        <Route path="/inscritos" element={<Inscritos />} />
-        <Route path="*" element={<h1>Página não encontrada</h1>} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/inscricao" element={<Inscricao />} />
+          <Route path="/inscritos" element={<Inscritos />} />
+          <Route path="*" element={<NaoEncontrada />} />
+        </Routes>
+      </main>
+
+      <footer className="rodape">
+        <p>Mutirão Dev 2027 é um evento fictício, criado para um teste técnico.</p>
+      </footer>
     </>
   );
 }

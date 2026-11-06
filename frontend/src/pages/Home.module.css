@@ -1,0 +1,144 @@
+.hero {
+  --foco: var(--papel);
+  background: var(--cobalto);
+  color: var(--papel);
+}
+
+.heroConteudo {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 6rem) var(--margem) clamp(3rem, 7vw, 5rem);
+}
+
+.titulo {
+  margin: 0 0 clamp(2rem, 5vw, 3rem);
+  color: var(--amarelo);
+  font-size: clamp(4.5rem, 24vw, 15rem);
+  font-weight: 900;
+  font-stretch: 62%;
+  line-height: 0.84;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.titulo span {
+  display: block;
+}
+
+.detalhes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem 3rem;
+  max-width: 46rem;
+  margin: 0 0 2.5rem;
+}
+
+.detalhes dt {
+  margin-bottom: 0.25rem;
+  color: var(--cobalto-claro);
+  font-weight: 600;
+}
+
+.detalhes dd {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+
+.secao {
+  padding: clamp(3.5rem, 8vw, 6rem) var(--margem);
+}
+
+.container {
+  max-width: var(--largura);
+  margin: 0 auto;
+}
+
+.sobre {
+  display: grid;
+  gap: 1.5rem 4rem;
+  max-width: var(--largura);
+  margin: 0 auto;
+}
+
+.texto p {
+  max-width: 62ch;
+  margin: 0 0 1.1rem;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+.texto p:last-child {
+  margin-bottom: 0;
+}
+
+.programacao {
+  background: var(--nevoa);
+}
+
+.lista {
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: grid;
+  gap: 0.35rem 2rem;
+  padding: 1.5rem 0;
+  border-top: 2px solid var(--linha);
+}
+
+.item:last-child {
+  border-bottom: 2px solid var(--linha);
+}
+
+.horario {
+  color: var(--cobalto);
+  font-size: 1.75rem;
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: 1.1;
+}
+
+.nome {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.cargo {
+  margin: 0.15rem 0 0;
+  color: var(--tinta-suave);
+}
+
+.palestra {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.chamada {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+}
+
+.chamada p {
+  margin: 0.75rem 0 0;
+  color: var(--tinta-suave);
+  font-size: 1.125rem;
+}
+
+@media (min-width: 800px) {
+  .sobre {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .item {
+    grid-template-columns: 6rem 1fr 1.3fr;
+    align-items: baseline;
+  }
+}

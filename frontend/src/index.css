@@ -1,0 +1,172 @@
+:root {
+  --cobalto: #2340d8;
+  --cobalto-claro: #c9d2ff;
+  --amarelo: #ffd23f;
+  --amarelo-claro: #fff3c4;
+  --tinta: #182046;
+  --tinta-suave: #4a5275;
+  --papel: #ffffff;
+  --nevoa: #eef1fb;
+  --linha: #cdd3ea;
+  --erro: #b3261e;
+  --erro-fundo: #fdecea;
+  --sucesso: #1b7f4c;
+  --sucesso-fundo: #e6f4ec;
+  --foco: var(--cobalto);
+
+  --fonte: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --largura: 1120px;
+  --margem: 1rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --margem: 1.5rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--fonte);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.05;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  font-stretch: 75%;
+}
+
+a {
+  color: var(--cobalto);
+}
+
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+}
+
+/* Botões compartilhados pelas telas */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.6rem;
+  border: 2px solid var(--tinta);
+  border-radius: 6px;
+  background: var(--amarelo);
+  color: var(--tinta);
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.botao:hover {
+  background: #ffe073;
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.botao-contorno {
+  background: transparent;
+}
+
+.botao-contorno:hover {
+  background: var(--nevoa);
+}
+
+/* Layout das telas internas */
+.pagina {
+  width: 100%;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) var(--margem) 4rem;
+}
+
+.pagina-titulo {
+  margin: 0 0 0.75rem;
+  color: var(--cobalto);
+  font-size: clamp(2.75rem, 8vw, 4.75rem);
+  font-weight: 900;
+  font-stretch: 62%;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.pagina-intro {
+  max-width: 60ch;
+  margin: 0 0 2.5rem;
+  color: var(--tinta-suave);
+  font-size: 1.125rem;
+}
+
+.alerta-erro {
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--erro);
+  background: var(--erro-fundo);
+  color: var(--erro);
+  font-weight: 600;
+}
+
+.rodape {
+  border-top: 2px solid var(--linha);
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+}
+
+.rodape p {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 1.5rem var(--margem);
+}
+
+/* Esconde da tela, mas mantém para leitores de tela */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

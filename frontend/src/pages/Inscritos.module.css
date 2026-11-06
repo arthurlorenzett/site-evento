@@ -1,0 +1,131 @@
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela th {
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--tinta);
+  font-weight: 700;
+  text-align: left;
+}
+
+.tabela td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--linha);
+  vertical-align: middle;
+}
+
+.tabela th:first-child,
+.tabela td:first-child {
+  padding-left: 0;
+}
+
+.nome {
+  font-weight: 700;
+}
+
+.email {
+  overflow-wrap: anywhere;
+}
+
+.semDado {
+  color: var(--tinta-suave);
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.estudante {
+  background: var(--nevoa);
+  color: var(--cobalto);
+}
+
+.profissional {
+  background: var(--amarelo-claro);
+  color: #6b4e00;
+}
+
+.acao {
+  text-align: right;
+}
+
+.excluir {
+  min-height: 2.5rem;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--erro);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--erro);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.excluir:hover {
+  background: var(--erro-fundo);
+}
+
+.excluir:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.vazio {
+  max-width: 36rem;
+  padding: 1.75rem;
+  border: 2px dashed var(--linha);
+  border-radius: 6px;
+}
+
+.vazio p {
+  margin: 0 0 1.25rem;
+  font-size: 1.1rem;
+}
+
+/* No celular, cada linha da tabela vira um bloco com rótulos */
+@media (max-width: 720px) {
+  .tabela thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .tabela tr {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--linha);
+  }
+
+  .tabela td {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.3rem 0;
+    border: 0;
+  }
+
+  .tabela td::before {
+    content: attr(data-rotulo);
+    color: var(--tinta-suave);
+    font-weight: 600;
+  }
+
+  .tabela td.acao {
+    display: block;
+    padding-top: 0.75rem;
+    text-align: left;
+  }
+
+  .tabela td.acao::before {
+    content: none;
+  }
+}
